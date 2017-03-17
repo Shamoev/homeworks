@@ -4,16 +4,16 @@ public class Fibonacci {
     public static void main(String[] args) {
         int n = 7;
 
-        System.out.println(fiboonacciCalc(n));
+        System.out.println(fibonacciCalc(n));
     }
 
-    public static int fiboonacciCalc(int n) {
+    public static int fibonacciCalc(int n) {
         if (n < 1) {
             return -1;
         }
         if (n == 1 || n == 2) {
             return 1;
         }
-        return fiboonacciCalc(n - 2) + fiboonacciCalc(n - 1);
+        return fibonacciCalc(n - 2) + fibonacciCalc(n - 1);
     }
 }

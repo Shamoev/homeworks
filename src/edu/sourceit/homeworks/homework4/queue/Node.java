@@ -30,6 +30,10 @@ public class Node {
 
     public void removeLast() {
         Node last = this;
+        if (last.getNext() == null) {
+            System.out.println("You can't delete head!");
+            return;
+        }
         while (last.getNext().getNext() != null) {
             last = last.getNext();
         }
@@ -41,7 +45,7 @@ public class Node {
         if (head.getNext() != null) {
             print(head.getNext());
         }
-        System.out.println();
+        // System.out.println();
     }
 
     /**
@@ -50,7 +54,19 @@ public class Node {
      * @param position number of the Node starting from the head
      **/
     public void remove(int position) {
-        /*Your code here*/
+        if (position == 0) {
+            System.out.println("You can't delete head!");
+            return;
+        }
+        Node crawler = this;
+        for (int i = 0; i < position - 1; i++) {
+            if (crawler.getNext().getNext() == null){
+                System.out.println("There is no such position to add after!");
+                return;
+            }
+            crawler = crawler.getNext();
+        }
+        crawler.setNext(crawler.getNext().getNext());
     }
 
     /**
@@ -60,17 +76,48 @@ public class Node {
      * @param node node should be inserted at position
      */
     public void addNode(int position, Node node) {
-        /*Your code here*/
+        Node crawler = this;
+        for (int i = 0; i < position; i++) {
+            if (crawler.getNext() == null){
+                System.out.println("There is no such position to delete!");
+                return;
+            }
+            crawler = crawler.getNext();
+        }
+        node.setNext(crawler.getNext());
+        crawler.setNext(node);
     }
 
     /**
-     * Gets then Node that located on the position starting from the tail (end of the list)
+     * Gets the Node that located on the position starting from the tail (end of the list)
      * if position is more than list size - prints error message
      * @param position number of the Node starting from the tail
      * @return Node that located on the position from the tail (end of list) if position exists in list
      */
     public Node getFromTail(int position) {
-        /*Your code here and please remove "return null". I've put it for ability to compile code*/
-        return null;
+        int numberOfEl = this.getSize();
+        if (position > numberOfEl || position <= 0) {
+            System.out.println("The position is illegal.");
+            return null;
+        }
+        Node crawler = this;
+        for (int i = 0; i < numberOfEl - position; i++) {
+            crawler = crawler.getNext();
+        }
+        return crawler;
+    }
+
+    /**
+     * Returns the number of elements of the linked list
+     * @return The number of elements of the linked list
+     */
+    public int getSize() {
+        Node crawlrer = this;
+        int count = 1;
+        while (crawlrer.getNext() != null) {
+            crawlrer = crawlrer.getNext();
+            count++;
+        }
+        return count;
     }
 }

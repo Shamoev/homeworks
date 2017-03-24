@@ -3,7 +3,6 @@ package edu.sourceit.homeworks.homework4.queue;
 public class NodeTest {
     public static void main(String[] args) {
         Node head = new Node(1);
-        // head.remove(3);
 
         head.add(new Node(2));
         head.add(new Node(3));
@@ -37,12 +36,21 @@ public class NodeTest {
         System.out.println();
 
         System.out.println("The number of elements is : " + head.getSize());
-        int position = 8;
-       /* if (head.getFromTail(position) != null) {
-            System.out.println("The element on the " + position + " position from the tail is : " + head.getFromTail(position).getValue());
-        }*/
 
-        head.getFromTailWithoutGetSize(position);
+        int position = 8;
+        Node node = head.getFromTailWithoutGetSize(position);
+        if (node != null) {
+            System.out.println("The element on the " + position + " position from the tail is : " + node.getValue());
+        }
+
+        position = 1;
+        Node head2 = new Node(2);
+        head2.print(head2);
+        System.out.println();
+        node = head2.getFromTailWithoutGetSize(position);
+        if (node != null) {
+            System.out.println("The element on the " + position + " position from the tail is : " + node.getValue());
+        }
     }
 
 }

@@ -119,24 +119,16 @@ public class Node {
             crawler = crawler.getNext();
             System.arraycopy(nodes, 0, nodes,1, nodes.length - 1);
             nodes[0] = crawler;
-            //System.out.println("(0) element is : " + nodes[0].getValue());
             count++;
-            // System.out.println("count = " + count);
         }
         if (count >= position) {
-            for (Node node : nodes) {
-                System.out.print(node.getValue() + " ");
-            }
-
+            return nodes[position - 1];
         } else if (count == position - 1) {
-            System.out.print(this.getValue() + " ");
             return this;
         } else {
             System.out.println("The list's length is less than position");
             return null;
         }
-
-        return null;
     }
 
     /**

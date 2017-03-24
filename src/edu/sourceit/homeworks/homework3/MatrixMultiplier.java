@@ -1,5 +1,8 @@
 package edu.sourceit.homeworks.homework3;
 
+import java.sql.Array;
+import java.util.Arrays;
+
 public class MatrixMultiplier {
     public static void main(String[] args) {
         int[][] first = {
@@ -19,26 +22,26 @@ public class MatrixMultiplier {
             System.out.println("Matrices should be rectangular.");
             return;
         }
-        // first size (m x n1)
-        int m = first.length;
-        int n1 =first[0].length;
-        // second size (n2 x k)
-        int n2 = second.length;
-        int k = second[0].length;
+        // first size
+        int firstMatrixNumOfRows = first.length;
+        int firstMatrixNumOfColumns =first[0].length;
+        // second size
+        int secondMatrixNumOfRows = second.length;
+        int secondMatrixNumOfColumns = second[0].length;
 
-        // n1 = n2
-        if (n1 != n2) {
+        // check the rule for matrix multiplication
+        if (firstMatrixNumOfColumns != secondMatrixNumOfRows) {
             System.out.println("Number of columns in the first matrix must be equal number of rows in the second matrix.");
             return;
         }
 
-        int[][] product = new int[m][k];
+        int[][] product = new int[firstMatrixNumOfRows][secondMatrixNumOfColumns];
         int sum = 0;
 
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < k; j++) {
+        for (int i = 0; i < firstMatrixNumOfRows; i++) {
+            for (int j = 0; j < secondMatrixNumOfColumns; j++) {
                 sum = 0;
-                for (int g = 0; g < n1; g++) {
+                for (int g = 0; g < firstMatrixNumOfColumns; g++) {
                     sum += (first[i][g] * second[g][j]);
                 }
                 product[i][j] = sum;

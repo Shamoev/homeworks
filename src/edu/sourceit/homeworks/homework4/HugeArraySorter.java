@@ -2,47 +2,17 @@ package edu.sourceit.homeworks.homework4;
 
 public class HugeArraySorter {
     public static void main(String[] args) {
-        int[] hugeArray = ArrayCreator.createHugeArray(10);
+        int[] hugeArray = ArrayCreator.createHugeArray(10 );
 
         int[] counters = new int[10];
 
-        int element;
+        // it was rather stupid to use switch )
         for (int i = 0; i < hugeArray.length; i++) {
-            element = hugeArray[i];
-            switch (element) {
-                case 0:
-                    counters[element]++;
-                    break;
-                case 1:
-                    counters[element]++;
-                    break;
-                case 2:
-                    counters[element]++;
-                    break;
-                case 3:
-                    counters[element]++;
-                    break;
-                case 4:
-                    counters[element]++;
-                    break;
-                case 5:
-                    counters[element]++;
-                    break;
-                case 6:
-                    counters[element]++;
-                    break;
-                case 7:
-                    counters[element]++;
-                    break;
-                case 8:
-                    counters[element]++;
-                    break;
-                case 9:
-                    counters[element]++;
-                    break;
-                default:
-                    System.out.println("The elements are not between [0...9]");
-                    return;
+            if (hugeArray[i] >= 0 && hugeArray[i] <= 9) {
+                counters[hugeArray[i]]++;
+            } else {
+                System.out.println("The elements are not between [0...9]");
+                return;
             }
         }
 

@@ -166,4 +166,19 @@ public class Node {
         }
         return count;
     }
+
+    public  boolean isCyclicLinkedList(Node head){
+        Node crawler = head;
+        while(crawler.getNext() != null){
+            Node cyclicNode = head;
+            do {
+                if (cyclicNode == crawler.getNext())
+                    return true;
+                cyclicNode = cyclicNode.getNext();
+            }
+            while (cyclicNode != crawler.getNext());
+            crawler = crawler.getNext();
+        }
+        return false;
+    }
 }

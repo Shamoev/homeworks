@@ -1,8 +1,5 @@
 package edu.sourceit.homeworks.homework3;
 
-import java.sql.Array;
-import java.util.Arrays;
-
 public class MatrixMultiplier {
     public static void main(String[] args) {
         int[][] first = {
@@ -36,15 +33,12 @@ public class MatrixMultiplier {
         }
 
         int[][] product = new int[firstMatrixNumOfRows][secondMatrixNumOfColumns];
-        int sum = 0;
 
         for (int i = 0; i < firstMatrixNumOfRows; i++) {
             for (int j = 0; j < secondMatrixNumOfColumns; j++) {
-                sum = 0;
                 for (int g = 0; g < firstMatrixNumOfColumns; g++) {
-                    sum += (first[i][g] * second[g][j]);
+                    product[i][j] += (first[i][g] * second[g][j]);
                 }
-                product[i][j] = sum;
             }
         }
         MatrixPrinter.PrintMatrix(product);

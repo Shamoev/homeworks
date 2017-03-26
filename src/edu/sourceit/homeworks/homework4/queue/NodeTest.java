@@ -37,8 +37,8 @@ public class NodeTest {
 
         System.out.println("The number of elements is : " + head.getSize());
 
-        int position = 8;
-        Node node = head.getFromTailWithoutGetSize(position);
+        int position = 5;
+        Node node = head.getFromTailWithAnchor(position);
         if (node != null) {
             System.out.println("The element on the " + position + " position from the tail is : " + node.getValue());
         }
@@ -47,7 +47,7 @@ public class NodeTest {
         Node head2 = new Node(2);
         head2.print(head2);
         System.out.println();
-        node = head2.getFromTailWithoutGetSize(position);
+        node = head2.getFromTailWithAnchor(position);
         if (node != null) {
             System.out.println("The element on the " + position + " position from the tail is : " + node.getValue());
         }

@@ -131,6 +131,28 @@ public class Node {
         }
     }
 
+    public Node getFromTailWithAnchor(int position) {
+        if (position < 1) {
+            System.out.println("The position is illegal.");
+            return null;
+        }
+        Node crawler = this;
+        Node anchor = this;
+        for (int i = 1; i < position; i++) {
+            if (crawler.getNext() == null) {
+                System.out.println("The list's length is less than position");
+                return null;
+            }
+            crawler = crawler.getNext();
+        }
+
+        while (crawler.getNext() != null) {
+            crawler = crawler.getNext();
+            anchor = anchor.getNext();
+        }
+        return anchor;
+    }
+
     /**
      * Returns the number of elements of the linked list
      * @return The number of elements of the linked list

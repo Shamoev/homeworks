@@ -10,14 +10,6 @@ public class MatrixPrinter {
         PrintMatrix(array);
     }
 
-    /*public static void PrintMatrix(int[][] array) {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[i][j] + " ");
-            }
-            System.out.println();
-        }*/
-
     public static void PrintMatrix(int[][] array) {
         int max;
         for (int i = 0; i < array.length; i++) {
@@ -34,7 +26,7 @@ public class MatrixPrinter {
 
     // calc number of digits in integer plus '-'
     private static int calcNumberOfSymbols(int number) {
-        return Integer.toString(number).split("").length;
+        return Integer.toString(number).length();
     }
 
     private static int findMaxNumberOfSymbolsInRow(int[][] array, int row) {

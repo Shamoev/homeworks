@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Date;
 
-public class MaxVisitorInOfficeSimplier {
+public class MaxVisitorInOfficeSimplified {
     public static void main(String[] args) {
         Visitor[] visitors = Visitor.createVisitors();
         Arrays.sort(visitors, new Comparator<Visitor>() {
@@ -48,20 +48,38 @@ public class MaxVisitorInOfficeSimplier {
 
         int count = 0;
         for (int i = 0; i < timePoints.length; i++) {
-            if (timePoints[i].isType()) {
+            if (timePoints[i].isCome()) {
                 count++;
+                if (count > maxVisitorAtOnce) {
+                    maxVisitorAtOnce = count;
+                }
             } else {
                 count--;
-            }
-            if (count > maxVisitorAtOnce) {
-                maxVisitorAtOnce = count;
             }
         }
 
         System.out.println("Max visitors was " + maxVisitorAtOnce);
     }
-
-
 }
+
+class TimePoint {
+    private long time;
+    // true - come; false - leave
+    private boolean isCome;
+
+    public boolean isCome() {
+        return isCome;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public TimePoint(long time, boolean isCome) {
+        this.time = time;
+        this.isCome = isCome;
+    }
+}
+
 
 

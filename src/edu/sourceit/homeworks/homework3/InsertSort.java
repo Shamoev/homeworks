@@ -10,18 +10,6 @@ public class InsertSort {
         int key;
         int j;
 
-        // I did so because it was my step by step understanding og InsertSort :)
-        /*for (int i = 1; i < array.length; i++) {
-            key = array[i];
-            j = i ;
-            while (j > 0 && array[j - 1] > key) {
-                array[j] = array[j - 1];
-                j--;
-            }
-        array[j] = key;
-        }*/
-
-        // I didn't think it (arraycopy) would do it: copy from itself to itself.
         for (int i = 1; i < array.length; i++) {
             key = array[i];
             j = i ;

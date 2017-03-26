@@ -6,7 +6,6 @@ public class HugeArraySorter {
 
         int[] counters = new int[10];
 
-        // it was rather stupid to use switch )
         for (int i = 0; i < hugeArray.length; i++) {
             if (hugeArray[i] >= 0 && hugeArray[i] <= 9) {
                 counters[hugeArray[i]]++;

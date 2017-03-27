@@ -2,7 +2,7 @@ package edu.sourceit.homeworks.homework4.queue;
 
 public class Node {
     private int value;
-    private Node next;
+     protected Node next;
 
     public Node(int value) {
         this.value =value;

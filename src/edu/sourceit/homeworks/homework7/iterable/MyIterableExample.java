@@ -14,7 +14,6 @@ public class MyIterableExample {
         }
         System.out.println();
 
-        //
         for (IterableNode node : head) {
             System.out.print(node.getValue() + "-->");
         }

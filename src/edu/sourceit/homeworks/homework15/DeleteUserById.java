@@ -17,7 +17,7 @@ public class DeleteUserById {
             con.setTransactionIsolation(Connection.TRANSACTION_SERIALIZABLE);
             con.setAutoCommit(false);
             PreparedStatement stmt = con.prepareStatement(JdbcConstants.DELETE_USER_SQL);
-            stmt.setLong(1, 20);
+            stmt.setLong(1, 3);
             // stmt.execute(); // it works
             int updatedRows = stmt.executeUpdate();
             System.out.println(updatedRows + " were updated");

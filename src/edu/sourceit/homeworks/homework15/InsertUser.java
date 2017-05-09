@@ -23,6 +23,7 @@ public class InsertUser {
             stmt.setLong(6, user.getUserRole().getId());
             // stmt.execute(); it works
             // con.commit(); error! autocommit is true
+            stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         } ;

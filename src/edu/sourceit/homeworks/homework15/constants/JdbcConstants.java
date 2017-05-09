@@ -1,7 +1,8 @@
 package edu.sourceit.homeworks.homework15.constants;
 
 public class JdbcConstants {
-    public final static String CONNECTION_URL       = "jdbc:mysql://127.0.0.1:3306/SourceIt?user=root&password=2004";
+    //public final static String CONNECTION_URL       = "jdbc:mysql://127.0.0.1:3306/SourceIt?user=root&password=2004";
+    public final static String CONNECTION_URL       = "jdbc:mysql://127.0.0.1:3306/SourceIt?user=root&password=Parol2004";
 
     public final static String INSERT_USER_SQL      = "INSERT INTO USERS (NAME, LASTNAME, LOGIN, PASSWORD, EMAIL, " +
             "USER_ROLE_ID) VALUES (?, ?, ?, ?, ?, ?)";

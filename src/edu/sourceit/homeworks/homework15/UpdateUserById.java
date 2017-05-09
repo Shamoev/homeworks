@@ -11,7 +11,7 @@ public class UpdateUserById {
     public static void main(String[] args) {
         try (Connection con = DriverManager.getConnection(CONNECTION_URL)) {
             PreparedStatement pstmt = con.prepareStatement(SELECT_USER_SQL);
-            int id = 9;
+            int id = 4;
             pstmt.setInt(1, id);
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
@@ -26,6 +26,7 @@ public class UpdateUserById {
                 pstmt.setString(5, user.getEmail());
                 pstmt.setLong(6, user.getUserRole().getId());
                 pstmt.setLong(7, user.getId());
+                pstmt.executeUpdate();
             }
 
         } catch (SQLException e) {
